@@ -6,6 +6,7 @@
     box-sizing: border-box;
     font-family: "Inter", sans-serif;
     text-transform: capitalize;
+    transition: all ease-out .5s;
 }
 ul{
     list-style: none;
@@ -18,6 +19,7 @@ img{
     background-position: center;
     object-fit: cover;
 }
+header,
 main{
     background: #f2f5fa;
 }
@@ -25,6 +27,134 @@ main{
     max-width: 1440px;
     margin:0 auto;
 }
+section{
+    padding:22px;
+}
+
+/* ........................................... */
+.btn { overflow:hidden; outline:none; user-select:none; appearance:none; transition:all .3s ease-in-out; cursor:pointer; white-space:normal; text-align:center; border:0 none; background-color:transparent; }
+.btn { font-family:var(--ft1); font-size:13px; font-weight:400; padding:12px 25px; line-height:1; border:0;
+    color:#fff; background-color:#092143; border-radius: 4px; border:1px solid #092143;
+    text-transform: uppercase; display:inline-block; text-decoration:none; }
+.btn:focus, .btn:hover { color:#092143; background-color:rgba(0,0,0,0); border:1px solid #092143; opacity:1; }
+
+
+.btn2 { color:#000; background-color:#fff; border:1px solid #fff; }
+.btn2:hover, .btn2:focus {color:#fff; background-color:#092143; border:1px solid #092143; }
+
+.btn3 { color:#fff; background-color:rgba(0,0,0,0); border:1px solid #fff;}
+.btn3:hover, .btn3:focus { color:#1e3e6b; background-color:#fff; border:1px solid #fff;}
+
+.btn4 { color:#fff; background-color:#40b884; border:1px solid #40b884; }
+.btn4:hover, .btn4:focus  {color:#40b884; background-color:#fff; border-color:#fff;}
+
+.btn5 { color:#000; background-color:rgba(0,0,0,0); border:1px solid #000; }
+.btn5:hover, .btn5:focus { color:#fff; background-color:#000; border-color:#000;}
+	
+.btn6 { color:#fff; background-color:#86BBBF; border:1px solid #86BBBF; }
+.btn6:hover, .btn5:focus { color:#fff; background-color:#111; border-color:#111;}
+/* ......................................... */
+/* ......................................... */
+.middle-header{
+display: flex;
+justify-content:space-between;
+align-items: center;
+padding:14px 0;
+}
+.middle-header .searchbar form{
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-radius: 4px;
+    display: flex;
+    width: 450px;
+    background: #fff;
+    height: 42px
+}
+.middle-header .searchbar form input{
+    color: #444444;
+    background:none;
+    font-size: 14px;
+    border-radius: 4px 0 0 4px;
+    border:0;
+    outline:0;
+    width: 100%;
+    padding:15px;
+}
+.middle-header .searchbar form label{
+    color:#fff;
+    background: #40b884;
+    padding:20px;
+    border-radius: 0 8px 8px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.middle-header .icons {
+    display: flex;
+    column-gap: 22px;
+}
+
+
+.middle-header .icons a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size:14px;
+    color:#333;
+}
+/* ......................................... */
+
+
+
+/* ......................................... */
+
+.bottom-header{
+    background: #fff;
+    display: flex;
+    /* column-gap:50px;  */
+    /* padding:20px 0; */
+}
+.bottom-header .caregories p{
+    min-width: 220px;
+    padding: 15px 15px;
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #222222;
+    border-right: 1px solid #dddddd;
+    /* margin-right: 10px; */
+    cursor: pointer;
+}
+
+.bottom-header .caregories p .fa-bars{
+    margin-right:8px;
+}
+.bottom-header .caregories p .fa-chevron-down{
+    margin-left:8px;
+}
+
+
+
+
+.bottom-header .menu{
+    display: flex;
+    /* column-gap:22px; */
+    padding-left:10px;
+    
+}
+.bottom-header .menu li a {
+    color: #222222;
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 15px 15px;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+.bottom-header .menu li a i{
+    margin-left:8px;
+}
+
 
 /* ......................................... */
 /* ......................................... */
@@ -34,10 +164,17 @@ main{
     border-radius: 8px;
 }
 .single-product .images{
-position: relative;
+    position: relative;
+    overflow: hidden;
 }
 .single-product .images img{
+   height:100%;
     border-radius: 8px; 
+    transition: all .5s;
+}
+.single-product .images:hover img{
+    transform:scale(1.5)
+    
 }
 .single-product .images .discount {
     position: absolute;
@@ -95,7 +232,7 @@ position: relative;
     font-size: 18px;
     color: #333;
     font-weight: 400;
-    margin-top: 7px;
+    /* margin-top: 7px; */
     transition: all .4s ease-in-out;
 }
 .single-product .content h2:hover{
@@ -133,7 +270,7 @@ color:#ec3636;
 /* ......................................... */
 /* ......................................... */
 .banner-1{
-    margin-top:100px;
+    padding-top:20px;
 }
 .banner-1 .container{
     display: flex;
@@ -148,6 +285,7 @@ color:#ec3636;
 .banner-1 .left img{
     width: 100%;
     height: 100%;
+    border-radius: 8px;
 }
 .banner-1 .right .top{     
     display: flex;
@@ -161,12 +299,15 @@ color:#ec3636;
 }
 .banner-1 .right .top .box img{
     height: 206px;
+    
 }
 .banner-1 .right .bottom{     
     flex:1 ;
     height: 100%;
 }
-
+.banner-1 .right img{
+    border-radius: 8px;
+}
 @media (max-width:576px) {
     .banner-1 .container{
         flex-direction: column; 
@@ -186,7 +327,7 @@ color:#ec3636;
 
 .new-products{
 margin:50px 0;
-padding:35px 0;
+padding-top:35px;
 background: #f2f5fa;;
 }
 .new-products .section-title h2{
@@ -216,6 +357,69 @@ margin-bottom: 35px;
 }
 /* ......................................... */
 /* ......................................... */
+.zoom_hov:hover .img img { transform:scale(1.1) }
+	
+.cl_item .img img { transition:all ease-out .5s }
+.rodBnr .img { border-radius:50% !important; margin-bottom: 20px;}
+.rodBnr .img img { animation-name: zoomInCnt; }
+.rodBnr .zoom_hov:hover .img img { transform:scale(1.1) }
+/* ............................................................. */
+.categories{
+    margin:50px 0;
+}
+.categories .section-title h2{
+    text-align: center;
+
+}
+.categories .box{
+    text-align: center;
+    margin-top: 30px;
+}
+.categories .box .images{
+    
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    transition:all ease-out .5s;
+    overflow: hidden;
+    
+    margin:0 auto;
+    
+}
+.categories .box .images img{
+    width: 100%;
+    height: 100%;
+    
+    
+}
+.categories .box:hover img{
+    transform:scale(1.1)
+}
+.categories .box-container{
+    /* display: flex;
+    justify-content:center;
+    align-items: center;
+    column-gap: 24px; */
+    display: grid;
+    grid-template-columns: repeat(8,1fr);
+    gap: 5px;
+
+}
+.categories .box-container p{
+    margin-top: 20px;
+    text-align: center;
+    font-size: 14px;
+}
+
+
+
+
+
+
+
+
+
+
 
 .banner-2 .container{
     display: flex;
@@ -278,6 +482,7 @@ margin-bottom: 35px;
 .popular-products .left img{
     width: 100%;
     height: 100%;
+    border-radius: 8px;
 }
 .popular-products .right{
     width:calc(60% - 30px);
